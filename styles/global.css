@@ -1,0 +1,563 @@
+/*
+ * Globals
+ */
+
+@import url("https://unpkg.com/leaflet@1.6.0/dist/leaflet.css");
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #1baae2;
+}
+
+/*
+ * Bootstrap overrides
+ */
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 0.05rem solid #fff;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-success,
+.btn-danger,
+.btn-primary {
+  border-radius: 1em;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+
+.big-button .btn-primary {
+  padding: 1.5em;
+  letter-spacing: 2px;
+}
+
+.big-button a.btn {
+  text-decoration: none;
+}
+
+.next-section .btn-primary {
+  width: 100%;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-size: 12px;
+  font-stretch: normal;
+  padding: 1.5em;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card {
+  border-radius: 0;
+}
+
+.card-header {
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.card-body {
+  color: #90949c;
+  font-family: "Roboto", sans-serif;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  background-color: #ffffff;
+}
+
+body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: "Cabin", sans-serif;
+}
+
+.cover-container {
+  max-width: 32em;
+}
+
+/*
+ * Header
+ */
+.masthead {
+  background-color: #141923;
+  font-style: sans-serif;
+  font-weight: 100;
+}
+
+.masthead-brand:link,
+.masthead-brand:visited,
+.masthead-brand:hover,
+.masthead-brand:active {
+  margin-bottom: 0;
+  color: #fff;
+  size: 1.5em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.inverse {
+  background-color: white;
+}
+
+.inverse .masthead-brand {
+  color: #141923;
+}
+
+.nav-masthead .nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.navbar-nav .dropdown .dropdown-toggle {
+  text-decoration: none;
+  color: #0068ea;
+}
+
+.navbar-nav .dropdown .dropdown-toggle:hover {
+  color: #0068ea;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+}
+
+/*
+ * Footer
+ */
+footer {
+  width: 100%;
+  color: white;
+  font-size: 0.8em;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.mastfoot {
+}
+
+.blue {
+  background-color: #1baae2;
+  color: #fff;
+}
+
+@media (min-width: 48em) {
+  .smallscreen {
+    margin-top: 0.7em;
+  }
+}
+
+/* Next main div */
+#__next {
+  width: 100%;
+  min-height: 100%;
+}
+
+.main {
+  background-image: url("/homepage-map.jpg");
+  width: 100%;
+  background-size: contain;
+  background-color: #141923;
+  padding: 3em 2em;
+  color: white;
+}
+
+.main p {
+  font-size: 1.7em;
+  padding-top: 1em;
+  font-weight: lighter;
+}
+
+.start-test {
+  padding: 3em 2em;
+}
+
+.start-test p {
+  font-size: 1.7em;
+  padding-top: 1em;
+  font-weight: lighter;
+}
+
+.tips,
+.result {
+  width: 100%;
+  background-color: white;
+  padding: 3em 2em;
+}
+
+.result p {
+  font-size: 1.2em;
+}
+
+.result h1 {
+  font-weight: 700;
+}
+
+.white {
+  width: 20px;
+  height: 20px;
+  margin-top: -1px;
+}
+
+main {
+  color: #000;
+  padding: 1em 2em;
+  height: 100%;
+}
+
+.mapdiv {
+  width: 100%;
+  height: calc(100% - 8.5em);
+  position: relative;
+}
+
+a,
+.blueText {
+  color: #0068ea;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.stdpar {
+  font-size: 1.2em;
+  padding: 2em 2em;
+}
+
+.tips img {
+  padding: 0.5em 0;
+}
+
+.tips h5 {
+  margin-top: 1.5rem;
+}
+
+.answer {
+  margin: -8rem auto 0 auto;
+  background-color: #ff625b;
+  z-index: 10;
+  border-radius: 5px;
+  width: 60%;
+  padding: 0.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.answerHidden {
+  visibility: hidden;
+}
+
+.answerCorrect {
+  visibility: visible;
+  background-color: #76c688;
+}
+
+.answerIncorrect {
+  visibility: visible;
+  background-color: #e97d88;
+}
+
+.tableResults {
+  margin: 50px auto;
+  width: 50%;
+  font-size: 0.8em;
+}
+
+.tableResults td {
+  padding: 0;
+  vertical-align: middle;
+}
+
+/*
+ * Quiz
+ */
+
+.actionButton {
+  border-radius: 18.5px;
+  line-height: 2;
+}
+
+.actionButton.yes {
+  color: #8dd240;
+  border: 1px solid #8dd240;
+}
+
+.actionButton.yes:hover:not([disabled]),
+.actionButton.yes.btn-primary {
+  color: #ffffff;
+  background-color: #8dd240;
+}
+
+.actionButton.no {
+  color: #fc625f;
+  border: 1px solid #fc625f;
+}
+
+.actionButton.no:hover:not([disabled]),
+.actionButton.no.btn-primary {
+  color: #ffffff;
+  background-color: #fc625f;
+}
+
+.actionButton.maybe {
+  color: #fec84c;
+  border: 1px solid #fec84c;
+}
+
+.actionButton.maybe:hover:not([disabled]),
+.actionButton.maybe.btn-primary {
+  color: #ffffff;
+  background-color: #fec84c;
+}
+
+#countryName {
+  background-color: rgb(249, 249, 249);
+  opacity: 0.95;
+  position: absolute;
+  padding: 5px 10px;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-family: "Cabin", sans-serif;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+/*
+ * Test
+ */
+
+.testButton {
+  border-radius: 18.5px;
+}
+
+.testButton.yes {
+  color: #8dd240;
+  border: 1px solid #8dd240;
+}
+
+.testButton.yes:hover:not([disabled]),
+.testButton.yes.btn-primary {
+  color: #ffffff;
+  background-color: #8dd240;
+}
+
+.testButton.no {
+  color: #fc625f;
+  border: 1px solid #fc625f;
+}
+
+.testButton.no:hover:not([disabled]),
+.testButton.no.btn-primary {
+  color: #ffffff;
+  background-color: #fc625f;
+}
+
+/*
+ * Sign In page
+ */
+
+.signin-title {
+  margin: 40px 0px 30px;
+  font-size: 26px;
+  color: #141923;
+}
+
+.signin-divider {
+  border-top: solid 1.5px #96999b;
+  margin: 30px 0;
+}
+
+.signin-error {
+  padding: 0.5em 1em;
+  margin: 1em 0em;
+  background-color: #277aff;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+/*
+ * Profile page
+ */
+
+.user-view {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card-container {
+  flex-basis: auto;
+  margin: 35px 0 35px 25px;
+}
+
+.profile-info {
+  display: inline-flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 60px;
+}
+
+.profile-name {
+  margin-left: 20px;
+  color: #141923;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.profile-signout-container {
+  margin-top: 25px;
+}
+
+.profile-signout {
+  padding: 0;
+  background-color: #ffffff;
+  color: #ff615b;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-bottom {
+  max-height: 39em;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mappings-container {
+  flex: 1 1 auto;
+  background-color: #dde3ee;
+  display: flex;
+  flex-direction: column;
+}
+
+.mappings-header {
+  padding: 0 25px;
+  background-color: #646973;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 36px;
+  align-items: center;
+}
+
+.mappings-title {
+  margin-left: 8px;
+  letter-spacing: 1px;
+}
+
+.mappings-list {
+  padding: 0 25px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.profile-fact {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  color: #141923;
+}
+
+.profile-fact-divider {
+  margin: 0;
+  color: #b6bbc6;
+}
+
+.bottom-button .btn-primary {
+  flex: 0 1 80px;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-size: 12px;
+  padding: 1.5em;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.iconVisible {
+  opacity: 1;
+}
+.iconInvisible {
+  opacity: 0;
+}
+.iconFadeOut {
+  opacity: 0;
+  transition: opacity 1s 2s;
+}
+.iconFadeIn {
+  opacity: 1;
+  transition: opacity 1s 2s;
+}
