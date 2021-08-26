@@ -16,6 +16,7 @@ const config = {
 const pool = new Pool();
 
 function createDB() {
+  console.log("config", config);
   pgtools.createdb(config, process.env.PGDATABASE, function (err, res) {
     if (err) {
       console.error(err);
@@ -125,7 +126,7 @@ async function dropTables() {
 
 // Uncoment any of the lines below, one at a time, to execute each of the needed self-explanatory functions
 
-//createDB();
+createDB();
 //createTables();
 //loadTables();
 //dropTables();
