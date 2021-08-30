@@ -124,9 +124,9 @@ async function dropTables() {
 }
 
 // Uncoment any of the lines below, one at a time, to execute each of the needed self-explanatory functions
-
+console.log(config)
 //createDB();
 //createTables();
-//loadTables();
+loadTables();
 //dropTables();
 //dropDB();
