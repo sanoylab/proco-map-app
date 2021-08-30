@@ -14,4 +14,9 @@ export const CAMPAIGNS = {
     users: 25,
     taggings: 2000,
   },
+  ericon: {
+    name: "ERICSON",
+    users: 25,
+    taggings: 2000,
+  },
 };
